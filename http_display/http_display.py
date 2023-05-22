@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from os.path import exists
-from os.path import join
+from os import environ
 import hashlib
 
 from PIL import Image
@@ -33,9 +33,9 @@ def main():
     cartoon_name = "/dev/shm/inky.png"
     md5_name = f"{cartoon_name}.md5"
     try:                 
-        # Make an HTTP request to The Guardian website's cartoons section
-        url = 'http://10.255.255.2/inky.png'
-                         
+
+        url = environ["INKY_URL"]
+
         urllib.request.urlretrieve(url, cartoon_name)
         md5 = hashlib.md5(open(cartoon_name,'rb').read()).hexdigest()
                          
