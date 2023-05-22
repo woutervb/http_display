@@ -37,11 +37,18 @@ On the raspberry os, it's important that the I2C and SPI interfaces are enabled 
 
     sudo raspi-config
 
+## Debian packages
+
+Some packages need to be installed in order to get everything working. This installation can be done via the following command:
+
+    sudo apt update
+    sudo apt install -y python3-pip git libopenjp2-7
+
 ## Python code
 
 Python can be directly installed from this github repo via the following command:
 
-    sudo pip install https://github.com/woutervb/http_display.git
+    sudo pip3 install git+https://github.com/woutervb/http_display.git
 
 ## Systemd files
 
