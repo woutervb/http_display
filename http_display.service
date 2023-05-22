@@ -1,0 +1,11 @@
+[Unit]
+Description=Download an image from a http service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/http_display
+WorkingDirectory=/dev/shm
+Environment="INKY_URL=http://10.255.255.2/inky.png"
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "http-display"
+version = "0.1.0"
+description = "Display a picture retrieved from a http server on a pimoroni ePaper display"
+authors = ["Wouter van Bommel <wouter@vanbommelonline.nl>"]
+license = "GPL2"
+readme = "README.md"
+packages = [{include = "http_display"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+inky = "^1.5.0"
+Pillow = "^9.5.0"
+urllib3 = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+http_display = "http_display.http_display:main"
